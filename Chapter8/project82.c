@@ -24,8 +24,7 @@ int main(void)
         n /= 10;
     }
     
-    for (digit=0; digit<10; digit++)
-    {
+    for (digit=0; digit<10; digit++){
     	printf("\t%d", digit_count[digit]);
     }
     
