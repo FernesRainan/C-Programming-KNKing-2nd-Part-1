@@ -13,7 +13,7 @@ int main (void)
 
     printf("Enter a number: (When you enter '0' or less than '0', then it aborts) ");
     scanf("%ld", &n);
-		while (n > 0){
+	while (n > 0){
 			
 	    while (n > 0){
 	        digit = n % 10;
@@ -28,10 +28,10 @@ int main (void)
 	    else 
 	        printf("No repeated digit\n");
 		
-			printf("\nEnter a number: ");
-			scanf("%ld", &n);
-		}
+		printf("\nEnter a number: ");
+		scanf("%ld", &n);
+	}
 		
-		printf("\nBye!\n");
-		return 0;
+	printf("\nBye!\n");
+	return 0;
 }
