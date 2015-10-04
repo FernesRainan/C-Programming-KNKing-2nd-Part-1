@@ -1,5 +1,5 @@
 //Write a program that reads a 5 x 5 array of integers 
-//and then prints the N sums and the N sums:
+//and then prints the row sums and the column sums:
 
 #include <stdio.h>
 
