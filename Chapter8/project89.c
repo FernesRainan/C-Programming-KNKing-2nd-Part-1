@@ -19,34 +19,35 @@ int main (void)
 		
     srand((unsigned) time(NULL));
 
-		x = 0; y = 0;
-		field[x][y] = walk++;
-		direction = rand() % 4;
-		moves_tried = 0;
+	x = 0; y = 0;
+	field[x][y] = walk++;
+	direction = rand() % 4;
+	moves_tried = 0;
 		
-		while (moves_tried < 4 && walk <='Z'){
-			switch ((direction + moves_tried) % 4){
-				case 0: new_x = x; new_y = y + 1; break;
-				case 1: new_x = x; new_y = y - 1; break;
-				case 2: new_x = x + 1; new_y = y; break;
-				case 3: new_x = x - 1; new_y = y; break;
-			}
-			if (0 <= new_x && new_x < WIDTH && 0 <= new_y && new_y <= WIDTH &&
-				field[new_x][new_y] == EARTH){
-				x = new_x; y = new_y; 
-				field[x][y] = walk++;
-				direction = rand() % 4;
-				moves_tried = 0;
-			}
-			else moves_tried++;
+	while (moves_tried < 4 && walk <='Z'){
+		switch ((direction + moves_tried) % 4){
+			case 0: new_x = x; new_y = y + 1; break;
+			case 1: new_x = x; new_y = y - 1; break;
+			case 2: new_x = x + 1; new_y = y; break;
+			case 3: new_x = x - 1; new_y = y; break;
 		}
+		if (0 <= new_x && new_x < WIDTH && 0 <= new_y && new_y <= WIDTH &&
+			field[new_x][new_y] == EARTH){
+			x = new_x; y = new_y; 
+			field[x][y] = walk++;
+			direction = rand() % 4;
+			moves_tried = 0;
+		}
+		else moves_tried++;
+	}
+	
+	printf("\n");
+		
+	for (x = 0; x < WIDTH; x++){
+		for (y = 0; y < WIDTH; y++)
+			printf("%c", field[x][y]);
 		printf("\n");
+	}
 		
-		for (x = 0; x < WIDTH; x++){
-			for (y = 0; y < WIDTH; y++)
-				printf("%c", field[x][y]);
-			printf("\n");
-		}
-		
-		return 0;
-	}		
+	return 0;
+}		
