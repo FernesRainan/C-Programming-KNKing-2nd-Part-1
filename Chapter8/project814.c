@@ -9,7 +9,7 @@
 int main (void)
 {
 	char ch, terminating, sentence[LENGTH] = {0};
-	int count, boundary;
+	int count;
 		
 	printf("Enter a sentence: ");
 	
