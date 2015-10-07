@@ -10,7 +10,7 @@
 int main (void)
 {
 	char first_initial, last_name[NAME_LENGTH];
-  int i = 0;
+	int i = 0;
    	
 	printf("\nEnter a first and last name: ");
 	scanf(" %c", &first_initial); // gets first letter of first name. Ignores leading blank spaces//
