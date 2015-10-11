@@ -13,7 +13,7 @@ bool is_prime(int n)
 	for (divisor = 2; divisor * divisor <=n; divisor++)
 		if (n % divisor == 0)
 			return false;
-		return true;
+	return true;
 }
 
 int main (void)
