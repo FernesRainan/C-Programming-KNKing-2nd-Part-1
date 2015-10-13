@@ -4,7 +4,7 @@
 
 float compute_GPA(char grades[], int n)
 {
-	int total, i;
+	int total = 0, i;
 	char grade;
 	
 	for (i = 0; i < n; i++){
