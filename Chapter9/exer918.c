@@ -2,24 +2,16 @@
 //that calculates the greatest common divisor of the intergers//
 //Call gcd recursively//
 
-int gcd(int i, int j);
-
-int gcd(int i, int j)
+int gcd (int m, int n)
 {
-    int n;
-			
-    if (i > j){
-        int t = i;
-        i = j;
-        j = t;
-    }
-
-	if (i == 0)
-		return j;
-	else {
-        	n = j % i;
-        	j = i;
-        	i = n;
-    		gcd (i, j);
-    	}
+	if (n > m) {
+		int t = m;
+		m = n;
+		n = t;
+	}
+	
+	if (n == 0) return m;
+	
+	return gcd (n, m % n);
 }
+
