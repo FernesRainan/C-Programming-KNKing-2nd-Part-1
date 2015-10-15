@@ -15,8 +15,8 @@ void print_array (char walk[WIDTH][WIDTH]);
 int main (void)
 {
 	char walk [WIDTH][WIDTH];
-    
-  generate_random_walk (walk);  
+    	
+    	generate_random_walk (walk);  
 	printf("\n");
 		
 	print_array(walk);
