@@ -14,12 +14,12 @@ int gcd(int i, int j)
         j = t;
     }
 
-		if (i == 0)
-			return j;
-		else {
-        n = j % i;
-        j = i;
-        i = n;
+	if (i == 0)
+		return j;
+	else {
+        	n = j % i;
+        	j = i;
+        	i = n;
     		gcd (i, j);
-    }
+    	}
 }
