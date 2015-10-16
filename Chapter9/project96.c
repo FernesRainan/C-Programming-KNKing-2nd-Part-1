@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-double poly(int n, double x);
+double poly(double x, int n);
 
 int main (void)
 {
@@ -15,15 +15,15 @@ int main (void)
 	printf("Please enter number x: ");
 	scanf("%lf", &x);
 	
-	printf("The result is %.2lf\n", 3*poly(5,x) + 2*poly(4,x) - 5*poly(3,x) - poly(2,x) + 7*poly(1,x) -6);
+	printf("The result is %.2lf\n", 3*poly(x,5) + 2*poly(x,4) - 5*poly(x,3) - poly(x,2) + 7*poly(x,1) -6);
 	
 	return 0;
 }
 
-double poly (int n, double x)
+double poly (double x, int n)
 {
 	if (n == 0)
 		return 1;
 	else 
-		return x * poly (n-1, x);
+		return x * poly (x, n-1);
 }
