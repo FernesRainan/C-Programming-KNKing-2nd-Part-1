@@ -27,12 +27,12 @@ bool is_full(void)
 void push (int i)
 {
 	if (is_full())
-		stck_overflow();
+		stack_overflow();
 	else
 		contents[top++] = i;
 }
 
-int pop (int i)
+int pop (void)
 {
 	if (is_empty())
 		stack_underflow();
