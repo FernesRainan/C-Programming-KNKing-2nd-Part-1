@@ -1,4 +1,5 @@
-//Stack and Contents example//
+//Modify the stack example of Section 10.2//
+
 
 #include <stdbool.h>
 #include <stdio.h>
