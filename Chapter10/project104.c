@@ -26,10 +26,7 @@ void read_cards(void);
 void analyze_hand(void);                                    
 void print_result(void);                                    
                                                             
-/********************************************************** 
- * main: Calls read_cards, analyze_hand, and print_result * 
- *       repeatedly.                                      * 
- **********************************************************/
+
 int main(void)                                              
 {                                                           
   for (;;) {                                                
@@ -39,11 +36,7 @@ int main(void)
   }                                                         
 }                                                           
                                                             
-/********************************************************** 
- * read_cards: Reads the cards into the external variable * 
- *             hand; checks for bad cards and duplicate   * 
- *             cards.                                     * 
- **********************************************************/
+
 void read_cards(void)                                       
 {                                                           
   char ch, rank_ch, suit_ch;                                
@@ -108,14 +101,7 @@ void read_cards(void)
   }                                                         
 }                                                           
                                                             
-/********************************************************** 
- * analyze_hand: Determines whether the hand contains a   * 
- *               straight, a flush, four-of-a-kind,       * 
- *               and/or three-of-a-kind; determines the   * 
- *               number of pairs; stores the results into * 
- *               the external variables straight, flush,  * 
- *               four, three, and pairs.                  * 
- **********************************************************/
+
 void analyze_hand(void)                                     
 {                                                           
   int rank, suit, card, pass, run;   
@@ -181,12 +167,7 @@ void analyze_hand(void)
   }                                                         
 }                                                           
                                                             
-/********************************************************** 
- * print_result: Prints the classification of the hand,   * 
- *               based on the values of the external      * 
- *               variables straight, flush, four, three,  * 
- *               and pairs.                               * 
- **********************************************************/
+
 void print_result(void)                                     
 {                                                           
   if (royal_flush)            printf("Royal flush");         //project104.c add//
