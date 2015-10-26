@@ -41,7 +41,7 @@ const int segments_per_character[10][NUM_SEGMENTS] = {
 
 // segment position in a 3x3 grid
 const int segment_coordinates[NUM_SEGMENTS][2] = {
-	{0,1},
+  {0,1},
   {1,2},
   {2,2},
   {2,1},
@@ -125,7 +125,7 @@ void print_digits_array (int row_size)
 			printf("%c", digits[row][column]);
 		}
 		printf("\n");
-  }
+  	}
 }
  
 
