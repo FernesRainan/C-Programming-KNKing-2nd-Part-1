@@ -30,11 +30,11 @@ void reduce (int numerator, int denominator,
 	int upper = numerator;
 	int lower = denominator;
 	
-  if (upper > lower){
-        temp = upper;
-        upper = lower;
-        lower = temp;
-  }
+	if (upper > lower){
+        	temp = upper;
+        	upper = lower;
+        	lower = temp;
+  	}
 
 	do {
 	    remains = lower % upper;
