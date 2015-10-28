@@ -158,14 +158,14 @@ void analyze_hand(int num_in_rank[], int num_in_suit[],
 void print_result(bool *straight, bool *flush, bool *four, bool *three, int *pairs)
 {
 	if (*straight && *flush) printf("Straight flush");
-  else if (*four)          printf("Four of a kind");
-  else if (*three && *pairs == 1) printf("Full house");
-  else if (*flush)         printf("Flush");
-  else if (*straight)      printf("Straight");
-  else if (*three)         printf("Three of a kind");
-  else if (*pairs == 2)    printf("Two pairs");
-  else if (*pairs == 1)    printf("Pair");
-  else                     printf("High card");
-  
-  printf("\n\n");
+	else if (*four)          printf("Four of a kind");
+	else if (*three && *pairs == 1) printf("Full house");
+	else if (*flush)         printf("Flush");
+	else if (*straight)      printf("Straight");
+	else if (*three)         printf("Three of a kind");
+	else if (*pairs == 2)    printf("Two pairs");
+	else if (*pairs == 1)    printf("Pair");
+	else                     printf("High card");
+	  
+	printf("\n\n");
 }
