@@ -12,7 +12,7 @@ int main (void)
 	
 	p = a;
 	
-//true_false ( p == a[0]); // Wrong, comparison between pointer and integer //
+      //true_false ( p == a[0]); // Wrong, comparison between pointer and integer //
 	true_false ( p == &a[0]);
 	true_false ( *p == a[0]);
 	true_false ( p[0] == a[0]);
