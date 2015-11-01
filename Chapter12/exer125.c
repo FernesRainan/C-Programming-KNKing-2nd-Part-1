@@ -2,7 +2,6 @@
 // Suppose that a is a one-dimensional array and p is a pointer variable. 
 
 #include <stdio.h>
-#include <stdbool.h>
 
 void true_false (int );
 
