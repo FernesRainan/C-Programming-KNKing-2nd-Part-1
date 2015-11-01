@@ -54,12 +54,11 @@ void read_msg (char msg[], int array_limit)
 bool analyze (char msg[])
 {
 	char *p, *q;
-	bool answer = true;
 	
-	for (p = &msg[0], q = p + msg_length - 1; p < &msg[msg_length/2] ; p++, q--)
-		if (toupper(*p) != toupper(*q)) answer = false;
+	for (p = msg, q = p + msg_length - 1; p <= q ; p++, q--)
+		if (toupper(*p) != toupper(*q)) return false;
 	
-	return answer;
+	return true;
 }
 
 	
