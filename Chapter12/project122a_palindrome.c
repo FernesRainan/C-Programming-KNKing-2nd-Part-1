@@ -19,7 +19,7 @@ int msg_length = 0;
 
 int main (void)
 {
-	char msg[MSG_LENG], ch;
+	char msg[MSG_LENG];
 	
 	printf("Enter a message: ");
 	read_msg (msg, MSG_LENG);
