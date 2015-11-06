@@ -40,7 +40,7 @@ int main (void)
 	char a[] = "science";
 	char b[] = "science";
 	
-	printf("Test1 result %d\n", strcmp(a, b));
+	printf("Test3 result %d\n", strcmp(a, b));
 		
 	return 0;
 }
