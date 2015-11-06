@@ -32,10 +32,10 @@ int main (void)
 	
 	printf("Test1 result %d\n", strcmp(s, t));
 	
-  char v[] = "play";
-  char w[] = "player";
-  
-  printf("Test2 result %d\n", strcmp(v, w));
+	char v[] = "play";
+	char w[] = "player";
+	  
+	printf("Test2 result %d\n", strcmp(v, w));
   
 	char a[] = "science";
 	char b[] = "science";
