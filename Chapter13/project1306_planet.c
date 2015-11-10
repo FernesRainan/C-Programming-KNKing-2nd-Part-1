@@ -12,8 +12,8 @@ int string_equal (const char *s, const char *t);
 int main (int argc, char *argv[])
 {
 	char *planets[] = {"Mercury", "Venus", "Earth", 
-		                 "Mars", "Jupiter", "Saturn",
-		                 "Uranus", "Neptune", "Pluto"};
+		           "Mars", "Jupiter", "Saturn",
+		           "Uranus", "Neptune", "Pluto"};
 	
 	int i, j;
 	
