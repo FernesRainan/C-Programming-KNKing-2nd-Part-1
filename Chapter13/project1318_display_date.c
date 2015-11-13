@@ -20,7 +20,7 @@ int main (void)
   
   if (month < 0 || month > 12 || day < 0 || day > 31) {
   	printf("Please enter a proper date\nProgram Aborted.\n");
-  	return 0;
+  	return 1;
   }
   
   printf("You entered the date %s %d, %d\n", month_name[month - 1], day, year);
