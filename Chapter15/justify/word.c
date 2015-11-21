@@ -5,7 +5,7 @@ int read_char(void)
 {
 	int ch = getchar();
 	
-	if (ch == '\n' || ch == 't')
+	if (ch == '\n' || ch == '\t')
 		return ' ';
 	return ch;
 }
