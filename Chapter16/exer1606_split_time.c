@@ -9,7 +9,7 @@
 
 struct time {
 		int hours, minutes, seconds;
-	} result;
+	};
 
 struct time split_time(long total_seconds);
 
@@ -18,11 +18,12 @@ struct time split_time(long total_seconds);
 int main (void)
 {
 	long total_seconds;
+	struct time result;
 	
 	printf("Please enter total_seconds (0 - 86399) : ");
 	scanf("%ld", &total_seconds);
 	
-	split_time (total_seconds);
+	result = split_time (total_seconds);
 	
 	printf("The result is \n");
 	printf("hours: %d minutes: %d seconds: %d\n", result.hours, result.minutes, result.seconds);
@@ -32,12 +33,16 @@ int main (void)
 
 struct time split_time (long total_seconds)
 {
-	result.hours = total_seconds / (60 * 60);
-	total_seconds %= 60 * 60;
-	result.minutes = total_seconds / 60;
-	result.seconds = (total_seconds %= 60);
+	struct time calc;
 	
-	return result;
+	calc.hours = total_seconds / (60 * 60);
+	total_seconds %= 60 * 60;
+	calc.minutes = total_seconds / 60;
+	calc.seconds = (total_seconds %= 60);
+	
+	return calc;
 }
+
+	
 	 
 	
