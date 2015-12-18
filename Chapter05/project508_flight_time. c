@@ -1,0 +1,75 @@
+// Calculating flight time //
+
+#define MITUTE(a, b) a*60 + b
+#define ABSOLUTE(x) (x) > 0 ? (x) : -(x)
+
+#include <stdio.h>
+
+int main (void)
+{
+    int hours, minutes, closest;
+
+    printf("Enter a 24-hour time(xx:xx): ");
+    scanf("%d:%d", &hours, &minutes);
+
+    minutes = hours*60 + minutes;
+
+    int departure1 = MITUTE(8, 0);
+    int departure2 = MITUTE(9, 43);
+    int departure3 = MITUTE(11, 19);
+    int departure4 = MITUTE(12, 47);
+    int departure5 = MITUTE(14, 0);
+    int departure6 = MITUTE(15, 45);
+    int departure7 = MITUTE(19, 0);
+    int departure8 = MITUTE(21, 45);
+    
+    int time1 = ABSOLUTE(departure1 - minutes);
+    int time2 = ABSOLUTE(departure2 - minutes);
+    int time3 = ABSOLUTE(departure3 - minutes); 
+    int time4 = ABSOLUTE(departure4 - minutes); 
+    int time5 = ABSOLUTE(departure5 - minutes); 
+    int time6 = ABSOLUTE(departure6 - minutes); 
+    int time7 = ABSOLUTE(departure7 - minutes); 
+    int time8 = ABSOLUTE(departure8 - minutes); 
+
+    printf("Closest departure time is ");
+
+    if (hours < 8 | hours >= 21) {
+        if (time1 < time8) printf("8:00 a.m., arriving at 10:16 a.m.\n");
+        else printf("9:45 p.m., arriving at 11:58 p.m.\n");
+    }
+    if (hours >= 8 && hours < 9) {
+        if (time1 < time2) printf("8:00 a.m., arriving at 10:16 a.m.\n");
+        else printf("9:43 a.m., arriving at 11:52 a.m.\n");
+    }
+    if (hours >= 9 && hours < 11) {
+        if (time2 < time3) printf("9:43 a.m., arriving at 11:52 a.m.\n");
+        else printf("11:19 a.m., arriving at 1:31 p.m.\n");
+    }
+    if (hours >= 11 && hours < 12) {
+        if (time3 < time4) printf("11:19 a.m., arriving at 1:31 p.m.\n");
+        else printf("12:47 p.m., arriving at 3:00 p.m.\n");
+    }
+    if (hours >= 12 && hours < 14) {
+        if (time4 < time5) printf("12:47 p.m., arriving at 3:00 p.m.\n");
+        else printf("2:00 p.m., arriving at 4:08 p.m.\n");
+    }
+    if (hours >= 14 && hours < 15) {
+        if (time5 < time6) printf("2:00 p.m., arriving at 4:08 p.m.\n");
+        else printf("3:45 p.m., arriving at 5:55 p.m.\n");
+    }
+    if (hours >= 15 && hours < 19) {
+        if (time6 < time7) printf("3:45 p.m., arriving at 5:55 p.m.\n");
+        else printf("7:00 p.m., arriving at 9:20 p.m.\n");
+    }
+    if (hours >= 19 && hours < 21) {
+        if (time7 < time8) printf("7:00 p.m., arriving at 9:20 p.m.\n");
+        else printf("9:45 p.m., arriving at 11:58 p.m.\n");
+    }
+
+    return 0;
+}
+
+        
+        
+    
