@@ -28,10 +28,10 @@ int main (void)
 {
     char ch;
     int hours, minutes, closest;
-		int time[8], i;
+    int time[8], i;
 		
-		for (;;) {
-				
+	for (;;) {
+	
 	    printf("\nEnter a 24-hour time(xx:xx): ");
 	    scanf("%d:%d", &hours, &minutes);
 	
@@ -79,7 +79,7 @@ int main (void)
 	    ;
 	    ch = getchar();
 	    if ( ch == 'q') break;	    
-		}
+	}
 		
     return 0;
 }
