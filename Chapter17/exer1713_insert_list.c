@@ -17,23 +17,23 @@ struct node *insert_into_ordered_list(struct node *list,
 	struct node *cur = list, *prev = NULL;
 
 	if (cur == NULL)                            // added line
-		return new_node;                          // added line, when list is empty.
+		return new_node;                    // added line, when list is empty.
 	
 	if (cur->value > new_node->value) {         // added line
-		list = new_node;                          // added line
-		new_node->next = cur;                     // added line
-		return list;                              // added line
+		list = new_node;                    // added line
+		new_node->next = cur;               // added line
+		return list;                        // added line
 	}                                           // added line, when new_node should be the first node. 
 	
 	while (cur->value <= new_node->value) {
 		prev = cur;
-		if (cur->next != NULL)                    // added line 
+		if (cur->next != NULL)              // added line 
 			cur = cur->next;
-		else {                                    // added line  
-			cur->next = new_node;                   // added line
-			new_node->next = NULL;                  // added line
-			return list;                            // added line
-		}                                         // added line, when new_node should be the last node. 
+		else {                              // added line  
+			cur->next = new_node;       // added line
+			new_node->next = NULL;      // added line
+			return list;                // added line
+		}                                   // added line, when new_node should be the last node. 
 	}
 		
 	prev->next = new_node;
