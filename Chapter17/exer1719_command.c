@@ -73,15 +73,15 @@ void exec_cmd(char cmd[])
 	int i;
 	
 	for (i = 0; i < NUMBER_OF_COMMANDS; i++){
-  	if(strcmp(cmd, file_cmd[i].cmd_name) == 0){        // Matching cmd_name
-    	file_cmd[i].cmd_pointer();                       // function-pointer call
-    	break ;                                          // Break from loop on matching command
-    }
-  }
+  		if(strcmp(cmd, file_cmd[i].cmd_name) == 0){		// Matching cmd_name
+    			file_cmd[i].cmd_pointer();                      // function-pointer call
+    			break ;                                         // Break from loop on matching command
+    		}
+  	}
  
-  if (i >= NUMBER_OF_COMMANDS) {
-  	fprintf(stderr, "\nCouldn't find command\n");
-  	exit(EXIT_FAILURE);
+	if (i >= NUMBER_OF_COMMANDS) {
+  		fprintf(stderr, "\nCouldn't find command\n");
+  		exit(EXIT_FAILURE);
 	}
 	return ;
 }
