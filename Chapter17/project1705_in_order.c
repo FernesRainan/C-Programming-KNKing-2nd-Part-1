@@ -27,11 +27,11 @@ int main (void)
 {
 	char *reminders[MAX_WORDS];
 	char msg_str[WORD_LEN+1];
-	int i, j, num_remind = 0;
+	int i, j, word_num = 0;
 	
-	for (;;) 
+	for (i = 0; ;i++) 
 	{
-		if (num_remind == MAX_WORDS){
+		if (word_num == MAX_WORDS){
 			printf("-- No space left --\n");
 			break;
 		}
@@ -40,28 +40,28 @@ int main (void)
 		
 		if (!(read_line(msg_str, WORD_LEN))) 
 			break;
-		
-				
-		for (i = 0; i < num_remind; i++)
-			if (strcmp(***, reminders[i]) < 0)
-				break;
-				
-		for (j = num_remind; j > i; j--)
-			reminders[j] = reminders[j-1];
 			                                                   
 		reminders[i] = malloc(strlen(msg_str) + 1);    
 		if (reminders[i] == NULL){                        
 			printf("-- No space left --\n");                 
 			break;                                           
 		}                                                  
-		
 		strcpy(reminders[i], msg_str);
-		
-		num_remind++;
+		word_num++;
+	}
+	
+	for (i = 1; i < word_num; i++) {
+		for (j = 1; j < word_num; j++){
+			if(strcmp(reminders[j-1], reminders[j]) > 0) {
+				strcpy(msg_str, reminders[j-1]);
+				strcpy(reminders[j-1], reminders[j]);
+				strcpy(reminders[j], msg_str);
+			}
+		}
 	}
 	
 	printf("\nIn sorted order: ");
-	for ( i = 0; i < num_remind; i++)
+	for ( i = 0; i < word_num; i++)
 		printf(" %s", reminders[i]);
 	
 	putchar('\n');
