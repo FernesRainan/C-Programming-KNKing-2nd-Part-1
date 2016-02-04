@@ -21,8 +21,9 @@ int main (void)
 	printf("Just one called: f(10) value is %d\n", f(10));
 	
 	for (c = 0; c < 5; c++)
-		g(10);
+		printf("%d times called. the value of g(10) is %d\n", (c + 1), g(10));
 	
+		
 	printf("Five times called already: g(10) value is %d\n", g(10));
 	
 	return 0;
