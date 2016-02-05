@@ -21,7 +21,7 @@ int main(void)
 {
 	int i;
 	
-	char error[] = "This is original error function\n";
+	char error[] = "This is original error function";
 	char error2[] = "This is fixed function\n";
 	
 	for (i = 0; i < 5; i++){
