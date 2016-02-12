@@ -1,13 +1,17 @@
-// Array to implement the stack
+// Implementing the Stack ADT Using a Linked List
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+#include "stackADT.h"
 
-#define STACK_SIZE 100
+struct node {
+	Item data;
+	struct node *next;
+};
 
-static int contents[STACK_SIZE];
-static int top = 0;
+struct stack_type {
+	struct node *top;
+};
 
 static void terminate(const char *message)
 {
@@ -15,32 +19,60 @@ static void terminate(const char *message)
 	exit(EXIT_FAILURE);
 }
 
-void make_empty(void)
+Stack create(void)
 {
-	top = 0;
+	Stack s = malloc (sizeof(struct stack_type));
+	if (s == NULL)
+		terminate("Error in create: stack could not be created.");
+	s->top = NULL;
+	return s;
 }
 
-bool is_empty(void)
+void destroy(Stack s)
 {
-	return top == 0;
+	make_empty(s);
+	free(s);
 }
 
-bool is_full(void)
+void make_empty(Stack s)
 {
-	return top == STACK_SIZE;
+	while (!is_empty(s))
+		pop(s);
 }
 
-void push(int i)
+bool is_empty(Stack s)
 {
-	if (is_full())
-		terminate("Error in push: stack is full.");
-	contents[top++] = i;
+	return s->top == NULL;
 }
 
-int pop(void)
+bool is_full(Stack s)
 {
-	if (is_empty())
+	return false;
+}
+
+void push(Stack s, Item i)
+{
+	struct node *new_node = malloc (sizeof(struct node));
+	if (new_node == NULL)
+		terminate("Error in push: stack is full");
+		
+	new_node->data = i;
+	new_node->next = s->top;
+	s->top = new_node;
+}
+
+Item pop(Stack s)
+{
+	struct node *old_top;
+	Item i;
+	
+	if (is_empty(s))
 		terminate("Error in pop: stack is empty.");
-	return contents[--top];
+		
+	old_top = s->top;
+	i = old_top->data;
+	s->top = old_top->next;
+	free(old_top);
+	return i;
 }
 
