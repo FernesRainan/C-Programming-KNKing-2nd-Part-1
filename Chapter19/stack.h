@@ -2,17 +2,17 @@
 #define STACK_H
 
 #include <stdbool.h>
-#define STACK_SIZE 100
 
-typedef struct {
-	int contents[STACK_SIZE];
-	int top;
-} Stack;
+typedef int Item;
 
-void make_empty(Stack *s);
-bool is_empty(const Stack *s);
-bool is_full(const Stack *s);
-void push(Stack *s, int i);
-int pop(Stack *s);
+typedef struct stack_type *Stack;
+
+Stack create(void);
+void destroy(Stack s);
+void make_empty(Stack s);
+bool is_empty(Stack s);
+bool is_full(Stack S);
+void push(Stack s, Item i);
+Item pop(Stack s);
 
 #endif
